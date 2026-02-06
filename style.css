@@ -1,0 +1,215 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+/* DARK ON SCROLL */
+header.scrolled {
+    background: rgba(10, 37, 64, 0.95);
+    backdrop-filter: none;
+}
+
+/* LOGO */
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MENU LIST */
+.nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    list-style: none;
+
+    width: 220px;
+    padding: 15px 0;
+    border-radius: 14px;
+
+    /* GLASS MENU */
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    display: none;
+}
+
+/* SHOW MENU */
+.nav-menu.active {
+    display: block;
+}
+
+/* DARK MENU ON SCROLL */
+header.scrolled .nav-menu {
+    background: #0a2540;
+}
+
+/* MENU ITEMS */
+.nav-menu li {
+    padding: 12px 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+}
+
+/* HOVER */
+.nav-menu a:hover {
+    color: #00e0ff;
+}
+
+
+
+/* HOVER UNDERLINE EFFECT */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #00d4ff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e0ff;
+}
+.nav-menu {
+    display: none;
+}
+
+.nav-menu.active {
+    display: block;
+}
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #0a2540, #1e3c72);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #00e0ff;
+}
+
+.section {
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+#typing-text::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: column;
+        display: none;
+        width: 85%;
+
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        border-radius: 16px;
+        padding: 20px 0;
+    }
+
+    header.scrolled .nav-links {
+        background: #0a2540;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+
